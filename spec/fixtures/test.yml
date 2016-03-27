@@ -1,6 +1,6 @@
 #Reused from ansible-lint/examples.
 ---
-- hosts:webservers
+- hosts: webservers
 #ANSIBLE0008
 - sudo_user: root
 

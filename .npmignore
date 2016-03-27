@@ -1,5 +1,5 @@
 node_modules
 .gitignore
 spec
-linter_ansible_linting.png
+linter_ansible_syntax.png
 .git
