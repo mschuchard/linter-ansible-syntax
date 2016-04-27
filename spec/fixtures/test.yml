@@ -1,30 +1,9 @@
-#Reused from ansible-lint/examples.
+#Error with line and col num.
 ---
 - hosts: webservers
 #ANSIBLE0008
 - sudo_user: root
 
-  vars:
-    bracket: "and close bracket"
-
   tasks:
-  - name: ANSIBLE0003
-    action: debug oops a missing {{bracket}}
-
-  - name: ANSIBLE0004
-    action: git version=HEAD c=d
-
-  - name: ANSIBLE0006
-    action: command chdir=bobbins creates=whatever /usr/bin/git clone blah
-
   - name: ANSIBLE0005
     action: hg clone foo
-
-  #un-named module invocation
-  - command: unzip foo.zip
-
-  - name: ANSIBLE0007
-    command: /bin/mkdir /path/to/dir
-
-  - name: ANSIBLE0009
-    file: path=/path/to/file mode=123

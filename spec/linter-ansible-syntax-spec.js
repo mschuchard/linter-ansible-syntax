@@ -14,6 +14,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       );
     });
   });
+  //TODO: update test and add test_three
 
   describe('checks a file with multiple issues and', () => {
     let editor = null;

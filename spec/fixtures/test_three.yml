@@ -1,0 +1,12 @@
+#Error without line and col num.
+---
+- hosts: webservers
+#ANSIBLE0008
+- sudo_user: root
+
+  vars:
+    bracket: "and close bracket"
+
+  tasks:
+  - name: ANSIBLE0003
+    action: debug oops a missing {{bracket}
