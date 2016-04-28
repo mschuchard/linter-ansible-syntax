@@ -1,7 +1,6 @@
 #Error without line and col num.
 ---
 - hosts: webservers
-#ANSIBLE0008
 - sudo_user: root
 
   vars:

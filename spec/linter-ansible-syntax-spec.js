@@ -14,7 +14,6 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       );
     });
   });
-  //TODO: update test and add test_three
 
   describe('checks a file with multiple issues and', () => {
     let editor = null;
@@ -41,13 +40,90 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].type).toBeDefined();
           expect(messages[0].type).toEqual('Error');
           expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual('playbook entries must be either a valid play or an include statement');
+          expect(messages[0].text).toEqual("this task 'hg' has extra params, which is only allowed in the following modules: command, shell, script, include, include_vars, add_host, group_by, set_fact, raw, meta");
           expect(messages[0].filePath).toBeDefined();
           expect(messages[0].filePath).toMatch(/.+test\.yml$/);
           expect(messages[0].range).toBeDefined();
           expect(messages[0].range.length).toBeDefined();
           expect(messages[0].range.length).toEqual(2);
           expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[1].type).toBeDefined();
+          expect(messages[1].type).toEqual('Warning');
+          expect(messages[1].text).toBeDefined();
+          expect(messages[1].text).toEqual('provided hosts list is empty, only localhost is available');
+          expect(messages[1].filePath).toBeDefined();
+          expect(messages[1].filePath).toMatch(/.+test\.yml$/);
+          expect(messages[1].range).toBeDefined();
+          expect(messages[1].range.length).toBeDefined();
+          expect(messages[1].range.length).toEqual(2);
+          expect(messages[1].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[2].type).toBeDefined();
+          expect(messages[2].type).toEqual('Warning');
+          expect(messages[2].text).toBeDefined();
+          expect(messages[2].text).toEqual('Instead of sudo/sudo_user, use become/become_user and');
+          expect(messages[2].filePath).toBeDefined();
+          expect(messages[2].filePath).toMatch(/.+test\.yml$/);
+          expect(messages[2].range).toBeDefined();
+          expect(messages[2].range.length).toBeDefined();
+          expect(messages[2].range.length).toEqual(2);
+          expect(messages[2].range).toEqual([[0, 0], [0, 32]]);
+        });
+      });
+    });
+  });
+
+  describe('checks a file with multiple issues and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'test_three.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds at least one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toBeGreaterThan(0);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Error');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toEqual('error while splitting arguments, either an unbalanced jinja2 block or quotes');
+          expect(messages[0].filePath).toBeDefined();
+          expect(messages[0].filePath).toMatch(/.+test\.yml$/);
+          expect(messages[0].range).toBeDefined();
+          expect(messages[0].range.length).toBeDefined();
+          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[1].type).toBeDefined();
+          expect(messages[1].type).toEqual('Warning');
+          expect(messages[1].text).toBeDefined();
+          expect(messages[1].text).toEqual('provided hosts list is empty, only localhost is available');
+          expect(messages[1].filePath).toBeDefined();
+          expect(messages[1].filePath).toMatch(/.+test\.yml$/);
+          expect(messages[1].range).toBeDefined();
+          expect(messages[1].range.length).toBeDefined();
+          expect(messages[1].range.length).toEqual(2);
+          expect(messages[1].range).toEqual([[0, 0], [0, 32]]);
+          expect(messages[2].type).toBeDefined();
+          expect(messages[2].type).toEqual('Warning');
+          expect(messages[2].text).toBeDefined();
+          expect(messages[2].text).toEqual('Instead of sudo/sudo_user, use become/become_user and');
+          expect(messages[2].filePath).toBeDefined();
+          expect(messages[2].filePath).toMatch(/.+test\.yml$/);
+          expect(messages[2].range).toBeDefined();
+          expect(messages[2].range.length).toBeDefined();
+          expect(messages[2].range.length).toEqual(2);
+          expect(messages[2].range).toEqual([[0, 0], [0, 32]]);
         });
       });
     });
