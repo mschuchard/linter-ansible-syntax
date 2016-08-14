@@ -3,11 +3,5 @@
 - hosts: whatever
 
   tasks:
-    #ensure ansible-playbook syntax-check is not attempting to lint includes
-    - include: test.yml
-
-    #ensure does not care about missing includes
-    - include: foo
-
     - name: hello world
       action: debug msg="Hello!"

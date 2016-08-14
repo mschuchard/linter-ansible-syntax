@@ -1,0 +1,6 @@
+#Bad include error.
+---
+- hosts: whatever
+
+  tasks:
+    - include: test.yml
