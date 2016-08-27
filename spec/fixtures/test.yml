@@ -1,7 +1,7 @@
 #Error with line and col num.
 ---
 - hosts: webservers
-- sudo_user: root
+  sudo_user: root
 
   tasks:
   - name: ANSIBLE0005
