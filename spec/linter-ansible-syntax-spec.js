@@ -97,7 +97,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].type).toBeDefined();
           expect(messages[0].type).toEqual('Error');
           expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual('error while splitting arguments, either an unbalanced jinja2 block or quotes');
+          expect(messages[0].text).toEqual('failed at splitting arguments, either an unbalanced jinja2 block or quotes');
           expect(messages[0].filePath).toBeDefined();
           expect(messages[0].filePath).toMatch(/.+test\.yml$/);
           expect(messages[0].range).toBeDefined();
@@ -132,6 +132,17 @@ describe('The Ansible Syntax Check provider for Linter', () => {
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() => {
       const goodFile = path.join(__dirname, 'fixtures', 'test_two.yml');
+      return atom.workspace.open(goodFile).then(editor =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(0);
+        })
+      );
+    });
+  });
+
+  it('ignores an included file', () => {
+    waitsForPromise(() => {
+      const goodFile = path.join(__dirname, 'fixtures', 'test_four.yml');
       return atom.workspace.open(goodFile).then(editor =>
         lint(editor).then(messages => {
           expect(messages.length).toEqual(0);
