@@ -4,7 +4,7 @@
 `Linter-Ansible-Syntax` aims to provide functional and robust `Ansible` syntax check linting functionality within Atom.
 
 ### Installation
-`Ansible` is required to be installed (preferably from a package or a pip) before using this.  The `Linter` and `Language-Ansible` atom packages are also required but should be automatically installed as dependencies thanks to steelbrain's `package-deps`.
+`Ansible` is required to be installed (preferably from a package or a pip) before using this. The `Linter` and `Language-Ansible` atom packages are also required but should be automatically installed as dependencies thanks to steelbrain's `package-deps`.
 
 ### Usage
 - The `ansible-playbook --syntax-check` output sometimes does not output line and column information for errors. When it guesses the line and column, then that information will be displayed. If it does not, the error will be displayed at line 1, column 1.

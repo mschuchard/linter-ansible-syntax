@@ -1,10 +1,15 @@
 {
   "name": "linter-ansible-syntax",
-  "main": "./lib/main",
+  "main": "./lib/main.js",
   "version": "1.1.0",
   "description": "Ansible linting via ansible-playbook --syntax-check",
   "repository": "https://github.com/mschuchard/linter-ansible-syntax",
   "license": "MIT",
+  "keywords": [
+    "lint",
+    "linter",
+    "ansible"
+  ],
   "bugs": {
     "url": "https://github.com/mschuchard/linter-ansible-syntax/issues"
   },

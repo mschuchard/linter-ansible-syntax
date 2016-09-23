@@ -1,6 +1,7 @@
 ### Next (Roadmap)
 - Updated atom-linter dependency.
 - Linter now ignores includes and roles.
+- Added severity key.
 - travisci
 - jasmine babel
 - work on linting task lists that are includes from somewhere else
