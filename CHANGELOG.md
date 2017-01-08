@@ -1,9 +1,11 @@
 ### Next (Roadmap)
+- Removed range 1 where unnecessary.
 - travisci
 - jasmine babel
-- work on linting task lists that are includes/roles from somewhere else
+- work on linting task lists that are includes/roles from somewhere else (trick ansible with hosts and tasks present in include/role)
 - ansible now checks includes (bad and missing situations followup)
 - deprec warnings terminates early in display
+- use trace for issues in other files
 
 ### 1.1.1
 - Updated atom-linter dependency.
