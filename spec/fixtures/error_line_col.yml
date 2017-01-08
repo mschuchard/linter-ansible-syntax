@@ -1,4 +1,4 @@
-#Error with line and col num.
+# Error with line and col num.
 ---
 - hosts: webservers
   sudo_user: root

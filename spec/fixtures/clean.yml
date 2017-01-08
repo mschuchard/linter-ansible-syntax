@@ -1,4 +1,4 @@
-#No errors from syntax check.
+# No errors from syntax check.
 ---
 - hosts: whatever
 

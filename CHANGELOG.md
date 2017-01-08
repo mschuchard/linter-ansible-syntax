@@ -6,6 +6,7 @@
 - ansible now checks includes (bad and missing situations followup)
 - deprec warnings terminates early in display
 - use trace for issues in other files
+- add test for bad_include and missing_include
 
 ### 1.1.1
 - Updated atom-linter dependency.

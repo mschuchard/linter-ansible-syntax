@@ -1,0 +1,4 @@
+# This is a theoretical include from somewhere else which also has an error.
+---
+- name: install ansible
+  pip: name=ansible state={{present}
