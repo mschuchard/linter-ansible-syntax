@@ -50,23 +50,87 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[1].type).toBeDefined();
           expect(messages[1].type).toEqual('Warning');
           expect(messages[1].text).toBeDefined();
-          expect(messages[1].text).toEqual('provided hosts list is empty, only localhost is available');
+          expect(messages[1].text).toEqual('Instead of sudo/sudo_user, use become/become_user and');
           expect(messages[1].filePath).toBeDefined();
           expect(messages[1].filePath).toMatch(/.+error_line_col\.yml$/);
           expect(messages[1].range).toBeDefined();
           expect(messages[1].range.length).toBeDefined();
           expect(messages[1].range.length).toEqual(2);
           expect(messages[1].range).toEqual([[0, 0], [0, 32]]);
-          expect(messages[2].type).toBeDefined();
-          expect(messages[2].type).toEqual('Warning');
-          expect(messages[2].text).toBeDefined();
-          expect(messages[2].text).toEqual('Instead of sudo/sudo_user, use become/become_user and');
-          expect(messages[2].filePath).toBeDefined();
-          expect(messages[2].filePath).toMatch(/.+error_line_col\.yml$/);
-          expect(messages[2].range).toBeDefined();
-          expect(messages[2].range.length).toBeDefined();
-          expect(messages[2].range.length).toEqual(2);
-          expect(messages[2].range).toEqual([[0, 0], [0, 32]]);
+        });
+      });
+    });
+  });
+
+  describe('checks a file with an issue and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'bad_include.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(1);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Warning');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toMatch(/Included file/);
+          expect(messages[0].filePath).toBeDefined();
+          expect(messages[0].filePath).toMatch(/.+bad_include\.yml$/);
+          expect(messages[0].range).toBeDefined();
+          expect(messages[0].range.length).toBeDefined();
+          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
+        });
+      });
+    });
+  });
+
+  describe('checks a file with an issue and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'missing_include.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(1);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].type).toBeDefined();
+          expect(messages[0].type).toEqual('Warning');
+          expect(messages[0].text).toBeDefined();
+          expect(messages[0].text).toMatch(/Included file/);
+          expect(messages[0].filePath).toBeDefined();
+          expect(messages[0].filePath).toMatch(/.+missing_include\.yml$/);
+          expect(messages[0].range).toBeDefined();
+          expect(messages[0].range.length).toBeDefined();
+          expect(messages[0].range.length).toEqual(2);
+          expect(messages[0].range).toEqual([[0, 0], [0, 32]]);
         });
       });
     });
