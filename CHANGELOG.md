@@ -6,7 +6,6 @@
 - work on linting task lists that are includes/roles from somewhere else (trick ansible with hosts and tasks present in include/role)
 - ansible now checks includes (bad and missing situations followup)
 - deprec warnings terminates early in display
-- revise test for bad_include; remove fixture with no line or col information since that now has the info
 
 ### 1.1.1
 - Updated atom-linter dependency.
