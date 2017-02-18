@@ -1,11 +1,11 @@
 ### Next (Roadmap)
-- Removed range 1 where unnecessary.
-- Errors for files which are included or roles from the playbook are now displayed.
 - travisci
 - jasmine babel
-- work on linting task lists that are includes/roles from somewhere else (trick ansible with hosts and tasks present in include/role)
-- ansible now checks includes (bad and missing situations followup)
 - deprec warnings terminates early in display
+
+### 1.1.2
+- Removed range 1 where unnecessary.
+- Errors for files which are included or roles from the playbook are now displayed.
 
 ### 1.1.1
 - Updated atom-linter dependency.
