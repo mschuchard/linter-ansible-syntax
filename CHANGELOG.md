@@ -1,7 +1,10 @@
 ### Next (Roadmap)
+- Added option for using an Ansible-Vault password file while linting.
 - travisci
 - jasmine babel
 - deprec warnings terminates early in display
+- singleline cleanup
+- add rolepath option?
 
 ### 1.1.2
 - Removed range 1 where unnecessary.
