@@ -1,10 +1,15 @@
 ### Next (Roadmap)
-- Added option for using an Ansible-Vault password file while linting.
 - travisci
 - jasmine babel
 - deprec warnings terminates early in display
 - singleline cleanup
 - add rolepath option?
+- make inventory hosts default empty string and add logic
+- bail out earlier on non-playbook files
+
+### 1.1.3
+- Added option for using an Ansible-Vault password file while linting.
+- Fixed undefined return for non-playbook Ansible files.
 
 ### 1.1.2
 - Removed range 1 where unnecessary.
