@@ -1,6 +1,6 @@
 # Error with line and col num.
 ---
-- hosts: webservers
+- hosts: whatever
   sudo_user: root
 
   tasks:

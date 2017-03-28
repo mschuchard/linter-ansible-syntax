@@ -1,12 +1,12 @@
 ### Next (Roadmap)
 - Config description additions.
 - Earlier termination on non-playbook files.
+- Now uses `ansible.cfg` located in directory of playbook if it exists.
 - travisci
 - jasmine babel
 - deprec warnings terminates early in display
 - add rolepath option?
 - make inventory hosts default empty string and add logic
-- https://github.com/mschuchard/linter-ansible-syntax/issues/4 (add ansible.cfg to fixtures for this)
 - linter 2 api
 - new interface stuff (linter-ui-default --> panel represents/statusbar represents --> entire project) in doc; click on line:col in panel for shortcut
 
