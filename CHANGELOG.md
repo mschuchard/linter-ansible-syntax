@@ -1,11 +1,14 @@
 ### Next (Roadmap)
+- Config description additions.
+- Earlier termination on non-playbook files.
 - travisci
 - jasmine babel
 - deprec warnings terminates early in display
-- singleline cleanup
 - add rolepath option?
 - make inventory hosts default empty string and add logic
-- bail out earlier on non-playbook files
+- https://github.com/mschuchard/linter-ansible-syntax/issues/4 (add ansible.cfg to fixtures for this)
+- linter 2 api
+- new interface stuff (linter-ui-default --> panel represents/statusbar represents --> entire project) in doc; click on line:col in panel for shortcut
 
 ### 1.1.3
 - Added option for using an Ansible-Vault password file while linting.
