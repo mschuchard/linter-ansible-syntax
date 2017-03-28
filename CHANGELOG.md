@@ -2,11 +2,10 @@
 - Config description additions.
 - Earlier termination on non-playbook files.
 - Now uses `ansible.cfg` located in directory of playbook if it exists.
+- The host inventory config setting is now used only with an entered value.
 - travisci
 - jasmine babel
 - deprec warnings terminates early in display
-- add rolepath option?
-- make inventory hosts default empty string and add logic
 - linter 2 api
 - new interface stuff (linter-ui-default --> panel represents/statusbar represents --> entire project) in doc; click on line:col in panel for shortcut
 
