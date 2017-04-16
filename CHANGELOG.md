@@ -1,12 +1,14 @@
 ### Next (Roadmap)
-- Config description additions.
-- Earlier termination on non-playbook files.
-- Now uses `ansible.cfg` located in directory of playbook if it exists.
-- The host inventory config setting is now used only when a custom value is entered.
 - travisci
 - jasmine babel
 - deprec warnings terminates early in display
 - linter 2 api
+
+### 1.1.4
+- Config description additions.
+- Earlier termination on non-playbook files.
+- Now uses `ansible.cfg` located in directory of playbook if it exists.
+- The host inventory config setting is now used only when a custom value is entered.
 
 ### 1.1.3
 - Added option for using an Ansible-Vault password file while linting.
