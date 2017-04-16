@@ -2,12 +2,11 @@
 - Config description additions.
 - Earlier termination on non-playbook files.
 - Now uses `ansible.cfg` located in directory of playbook if it exists.
-- The host inventory config setting is now used only with an entered value.
+- The host inventory config setting is now used only when a custom value is entered.
 - travisci
 - jasmine babel
 - deprec warnings terminates early in display
 - linter 2 api
-- new interface stuff (linter-ui-default --> panel represents/statusbar represents --> entire project) in doc; click on line:col in panel for shortcut
 
 ### 1.1.3
 - Added option for using an Ansible-Vault password file while linting.

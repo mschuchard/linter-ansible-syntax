@@ -1,4 +1,4 @@
-# Bad include error.
+# Playbook that includes a file with an error.
 ---
 - hosts: whatever
 
