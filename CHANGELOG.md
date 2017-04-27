@@ -1,8 +1,7 @@
 ### Next (Roadmap)
-- travisci
+- Switched to using Linter v2 API.
 - jasmine babel
 - deprec warnings terminates early in display
-- linter 2 api
 
 ### 1.1.4
 - Config description additions.
