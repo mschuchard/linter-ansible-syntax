@@ -1,8 +1,10 @@
 ### Next (Roadmap)
-- Switched to using Linter v2 API.
-- Removed `atom-package-deps` dependency and functionality.
 - jasmine babel
 - deprec warnings terminates early in display
+
+### 1.2.0
+- Switched to using Linter v2 API.
+- Removed `atom-package-deps` dependency and functionality.
 
 ### 1.1.4
 - Config description additions.
