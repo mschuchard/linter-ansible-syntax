@@ -1,5 +1,4 @@
 ### Next (Roadmap)
-- jasmine babel
 - deprec warnings terminates early in display
 
 ### 1.2.0
