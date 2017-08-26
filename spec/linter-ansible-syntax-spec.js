@@ -26,10 +26,10 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       );
     });
 
-    it('finds at least one message', () => {
+    it('finds two messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toBeGreaterThan(0);
+          expect(messages.length).toEqual(2);
         })
       );
     });
@@ -44,8 +44,6 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position.length).toBeDefined();
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
           expect(messages[1].severity).toBeDefined();
           expect(messages[1].severity).toEqual('error');
@@ -54,8 +52,6 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[1].location.file).toBeDefined();
           expect(messages[1].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[1].location.position).toBeDefined();
-          expect(messages[1].location.position.length).toBeDefined();
-          expect(messages[1].location.position.length).toEqual(2);
           expect(messages[1].location.position).toEqual([[6, 4], [6, 5]]);
         });
       });
@@ -81,7 +77,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       );
     });
 
-    it('verifies the messages', () => {
+    it('verifies the message', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
@@ -91,8 +87,6 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+error_included\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position.length).toBeDefined();
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[0].location.position).toEqual([[2, 2], [2, 3]]);
         });
       });
@@ -128,8 +122,6 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+missing_include\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position.length).toBeDefined();
-          expect(messages[0].location.position.length).toEqual(2);
           expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
         });
       });
@@ -147,11 +139,11 @@ describe('The Ansible Syntax Check provider for Linter', () => {
     });
   });
 
-  it('ignores an included file', function(done) {
+  it('ignores an included file', (done) => {
     const goodFile = path.join(__dirname, 'fixtures', 'included_clean.yml');
     return atom.workspace.open(goodFile).then(editor =>
       lint(editor).then(messages => {
-      }, function(reason) {
+      }, (reason) => {
         done();
       })
     );
