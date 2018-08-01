@@ -1,6 +1,9 @@
 ### Next (Roadmap)
 - deprec warnings terminates early in display
 
+### 1.2.1
+- Added `ansible-advanced` to source scope.
+
 ### 1.2.0
 - Switched to using Linter v2 API.
 - Removed `atom-package-deps` dependency and functionality.
