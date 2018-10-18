@@ -48,7 +48,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[1].severity).toBeDefined();
           expect(messages[1].severity).toEqual('error');
           expect(messages[1].excerpt).toBeDefined();
-          expect(messages[1].excerpt).toEqual("this task 'hg' has extra params, which is only allowed in the following modules: command, win_command, shell, win_shell, script, include, include_vars, add_host, group_by, set_fact, raw, meta");
+          expect(messages[1].excerpt).toMatch(/this task 'hg' has extra params, which is only allowed in the following modules:/);
           expect(messages[1].location.file).toBeDefined();
           expect(messages[1].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[1].location.position).toBeDefined();
