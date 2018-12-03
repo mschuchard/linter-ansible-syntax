@@ -1,5 +1,7 @@
 ### Next (Roadmap)
+- Updated `atom-linter` dependency.
 - deprec warnings terminates early in display
+update travis for python3
 
 ### 1.2.1
 - Added `ansible-advanced` to source scope.
@@ -23,7 +25,7 @@
 - Errors for files which are included or roles from the playbook are now displayed.
 
 ### 1.1.1
-- Updated atom-linter dependency.
+- Updated `atom-linter` dependency.
 - Linter now ignores includes and roles.
 - Added severity key.
 - Removed option to lint all yaml by default since `language-ansible` now identifies all `.yml` as Ansible.
