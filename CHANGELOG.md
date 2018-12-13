@@ -1,5 +1,6 @@
 ### Next (Roadmap)
 - Updated `atom-linter` dependency.
+- Catch linting on nonexistent files.
 - deprec warnings terminates early in display
 update travis for python3
 
