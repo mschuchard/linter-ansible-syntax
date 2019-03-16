@@ -2,7 +2,6 @@
 - Updated `atom-linter` dependency.
 - Catch linting on nonexistent files.
 - deprec warnings terminates early in display
-update travis for python3
 
 ### 1.2.1
 - Added `ansible-advanced` to source scope.
