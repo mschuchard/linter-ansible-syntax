@@ -1,7 +1,6 @@
-### Next (Roadmap)
+### 1.2.2
 - Updated `atom-linter` dependency.
 - Catch linting on nonexistent files.
-- deprec warnings terminates early in display
 
 ### 1.2.1
 - Added `ansible-advanced` to source scope.
