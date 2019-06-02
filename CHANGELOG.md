@@ -1,3 +1,6 @@
+### 1.2.3 (Roadmap)
+- Change linter scope to project level.
+
 ### 1.2.2
 - Updated `atom-linter` dependency.
 - Catch linting on nonexistent files.
