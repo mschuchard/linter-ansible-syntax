@@ -1,6 +1,10 @@
 ### 1.2.3 (Roadmap)
 - Change linter scope to project level.
 
+- drop < 2.0 support (check code)
+- do I need to be iterating over each line instead of regexp on output?
+- error_included spec no longer displaying in linter
+
 ### 1.2.2
 - Updated `atom-linter` dependency.
 - Catch linting on nonexistent files.
