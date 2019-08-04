@@ -1,5 +1,6 @@
 ### 1.2.3 (Roadmap)
 - Change linter scope to project level.
+- Capture new wording in output describing file with error.
 
 - drop < 2.0 support (check code)
 - do I need to be iterating over each line instead of regexp on output?
