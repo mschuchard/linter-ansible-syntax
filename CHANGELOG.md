@@ -1,10 +1,11 @@
 ### 1.2.3 (Roadmap)
 - Change linter scope to project level.
 - Capture new wording in output describing file with error.
+- Only parse for one error in output (efficiency improvement).
 
 - drop < 2.0 support (check code)
-- do I need to be iterating over each line instead of regexp on output?
 - error_included spec no longer displaying in linter
+- missing_include deprec warning until 2.12
 
 ### 1.2.2
 - Updated `atom-linter` dependency.
