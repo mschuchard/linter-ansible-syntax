@@ -38,21 +38,21 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('warning');
+          expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('Instead of sudo/sudo_user, use become/become_user and .');
+          expect(messages[0].excerpt).toMatch(/this task 'hg' has extra params, which is only allowed in the following modules:/);
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
+          expect(messages[0].location.position).toEqual([[6, 4], [6, 5]]);
           expect(messages[1].severity).toBeDefined();
-          expect(messages[1].severity).toEqual('error');
+          expect(messages[1].severity).toEqual('warning');
           expect(messages[1].excerpt).toBeDefined();
-          expect(messages[1].excerpt).toMatch(/this task 'hg' has extra params, which is only allowed in the following modules:/);
+          expect(messages[1].excerpt).toEqual('Instead of sudo/sudo_user, use become/become_user and .');
           expect(messages[1].location.file).toBeDefined();
           expect(messages[1].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[1].location.position).toBeDefined();
-          expect(messages[1].location.position).toEqual([[6, 4], [6, 5]]);
+          expect(messages[1].location.position).toEqual([[0, 0], [0, 1]]);
         });
       });
     });

@@ -2,7 +2,6 @@
 - Bump minimum supported version to 2.0.
 
 - error_included spec no longer displaying in linter
-- missing_include deprec warning until 2.12
 
 ### 1.2.3
 - Change linter scope to project level.
