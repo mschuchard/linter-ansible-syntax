@@ -1,8 +1,6 @@
 ### 1.3.0 (Roadmap)
 - Bump minimum supported version to 2.0.
 
-- error_included spec no longer displaying in linter
-
 ### 1.2.3
 - Change linter scope to project level.
 - Capture new wording in output describing file with error.
