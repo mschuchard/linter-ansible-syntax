@@ -129,25 +129,21 @@ describe('The Ansible Syntax Check provider for Linter', () => {
   });
 
   it('finds nothing wrong with a valid file', () => {
-    waitsForPromise(() => {
-      const goodFile = path.join(__dirname, 'fixtures', 'clean.yml');
-      return atom.workspace.open(goodFile).then(editor =>
-        lint(editor).then(messages => {
-          expect(messages.length).toEqual(0);
-        })
-      );
-    });
+    const goodFile = path.join(__dirname, 'fixtures', 'clean.yml');
+    return atom.workspace.open(goodFile).then(editor =>
+      lint(editor).then(messages => {
+        expect(messages.length).toEqual(0);
+      })
+    );
   });
 
   it('ignores an included file', (done) => {
-    waitsForPromise(() => {
-      const goodFile = path.join(__dirname, 'fixtures', 'included_clean.yml');
-      return atom.workspace.open(goodFile).then(editor =>
-        lint(editor).then(messages => {
-        }, (reason) => {
-          done();
-        })
-      );
+    const goodFile = path.join(__dirname, 'fixtures', 'included_clean.yml');
+    return atom.workspace.open(goodFile).then(editor =>
+      lint(editor).then(messages => {
+      }, (reason) => {
+        done();
+      })
     );
   });
 });
