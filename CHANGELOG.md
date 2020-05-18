@@ -1,6 +1,9 @@
 ### 1.3.0 (Roadmap)
 - Bump minimum supported version to 2.0.
 
+- unreadable file test from ansible-lint causes error sometimes because conflict between packages?
+- check on all of lint's fixtures
+
 ### 1.2.3
 - Change linter scope to project level.
 - Capture new wording in output describing file with error.
