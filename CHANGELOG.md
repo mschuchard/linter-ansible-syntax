@@ -1,7 +1,7 @@
 ### 1.3.0 (Roadmap)
 - Bump minimum supported version to 2.0.
+- Deal with when Ansible fails to determine issue location.
 
-- unreadable file test from ansible-lint causes error sometimes because conflict between packages?
 - check on all of lint's fixtures
 
 ### 1.2.3
