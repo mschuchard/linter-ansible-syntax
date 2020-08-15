@@ -44,11 +44,11 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[6, 4], [6, 5]]);
+          expect(messages[0].location.position).toEqual([[8, 4], [8, 5]]);
           expect(messages[1].severity).toBeDefined();
           expect(messages[1].severity).toEqual('warning');
           expect(messages[1].excerpt).toBeDefined();
-          expect(messages[1].excerpt).toEqual('Instead of sudo/sudo_user, use become/become_user and .');
+          expect(messages[1].excerpt).toEqual("Included file '/home/matt/git_repos/maintenance/linter-.");
           expect(messages[1].location.file).toBeDefined();
           expect(messages[1].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[1].location.position).toBeDefined();
@@ -83,7 +83,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toEqual('Syntax Error while loading YAML.');
+          expect(messages[0].excerpt).toEqual('We were unable to read either as JSON nor YAML, these are the errors we got from each:');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+yaml_syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();

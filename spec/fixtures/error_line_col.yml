@@ -1,8 +1,9 @@
 # Error with line and col num.
 ---
 - hosts: whatever
-  sudo_user: root
 
   tasks:
+  - include: bar
+
   - name: ANSIBLE0005
     action: hg clone foo

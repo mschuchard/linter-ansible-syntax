@@ -2,8 +2,6 @@
 - Bump minimum supported version to 2.0.
 - Deal with when Ansible fails to determine issue location.
 
-- check on all of lint's fixtures
-
 ### 1.2.3
 - Change linter scope to project level.
 - Capture new wording in output describing file with error.
