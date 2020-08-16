@@ -1,4 +1,4 @@
-### 1.3.0 (Roadmap)
+### 1.3.0
 - Bump minimum supported version to 2.0.
 - Deal with when Ansible fails to determine issue location.
 
