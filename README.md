@@ -1,7 +1,7 @@
 ![Preview](https://raw.githubusercontent.com/mschuchard/linter-ansible-syntax/master/linter_ansible_syntax.png)
 
 ### Linter-Ansible-Syntax
-[![Build Status](https://travis-ci.org/mschuchard/linter-ansible-syntax.svg?branch=master)](https://travis-ci.org/mschuchard/linter-ansible-syntax)
+[![Build Status](https://travis-ci.com/mschuchard/linter-ansible-syntax.svg?branch=master)](https://travis-ci.com/mschuchard/linter-ansible-syntax)
 
 `Linter-Ansible-Syntax` aims to provide functional and robust `Ansible` syntax check linting functionality within Atom.
 
