@@ -1,6 +1,7 @@
 ### (Next)
 - Updates to Linter API usage.
 - Fix error catch exec return.
+- Fix warning file location.
 
 ### 1.3.0
 - Bump minimum supported version to 2.0.
