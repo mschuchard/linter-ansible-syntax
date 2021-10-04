@@ -1,4 +1,4 @@
-### (Next)
+### 1.3.1
 - Updates to Linter API usage.
 - Fix error catch exec return.
 - Fix warning file location.
