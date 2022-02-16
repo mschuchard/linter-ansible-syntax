@@ -25,4 +25,4 @@ python: 3.8
 # execute tests
 install: pip install ansible
 before_script: ansible --version
-script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+script: 'curl -s https://raw.githubusercontent.com/mschuchard/vagrant-boxes-docker-images/master/atom-build-package.sh | sh'
