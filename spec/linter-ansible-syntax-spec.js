@@ -175,8 +175,8 @@ describe('The Ansible Syntax Check provider for Linter', () => {
   it('ignores an included file', (done) => {
     const goodFile = path.join(__dirname, 'fixtures', 'included_clean.yml');
     return atom.workspace.open(goodFile).then(editor =>
-      lint(editor).then(messages => {
-      }, (reason) => {
+      lint(editor).then(=> {
+      }, () => {
         done();
       })
     );
