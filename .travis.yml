@@ -20,7 +20,7 @@ env:
   - ATOM_LINT_WITH_BUNDLED_NODE='true'
 
 os: linux
-python: 3.8
+python: 3.9
 
 # execute tests
 install: pip install ansible

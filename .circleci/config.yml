@@ -1,0 +1,40 @@
+---
+version: 2.1
+
+jobs:
+  test:
+    environment:
+      DISPLAY: ':99'
+      APM_TEST_PACKAGES: 'language-ansible'
+    working_directory: /tmp/project
+    machine:
+      image: ubuntu-2004:current
+    steps:
+    - checkout
+    - restore_cache:
+        keys:
+        - linter-ansible-syntax
+    - run:
+        name: install some pre-requisite packages
+        command: sudo apt-get update && sudo apt-get -yq install curl xvfb libgbm-dev unzip
+    - run:
+        name: install ansible
+        command: pip install ansible
+    - run:
+        name: start display server for Atom
+        command: /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1024x768x16 +extension RANDR
+        background: true
+    - run:
+        name: run package tests
+        command: curl -s https://raw.githubusercontent.com/mschuchard/vagrant-boxes-docker-images/master/atom-build-package.sh | sh
+    - save_cache:
+        paths:
+        - node_modules
+        - ~/.atom/packages
+        # ideally also apt when that is supported
+        key: linter-ansible-syntax
+
+workflows:
+  execute_tests:
+    jobs:
+    - test
