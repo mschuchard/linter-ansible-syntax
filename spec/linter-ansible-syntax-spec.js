@@ -40,15 +40,15 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].severity).toBeDefined();
           expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toMatch(/this task 'hg' has extra params, which is only allowed in the following modules:/);
+          expect(messages[0].excerpt).toEqual('Unable to retrieve file contents');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[7, 4], [7, 5]]);
+          expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
           expect(messages[1].severity).toBeDefined();
           expect(messages[1].severity).toEqual('warning');
           expect(messages[1].excerpt).toBeDefined();
-          expect(messages[1].excerpt).toMatch(/Included file '.*linter-\./);
+          expect(messages[1].excerpt).toEqual('"include" is deprecated, use include_tasks/import_tasks .');
           expect(messages[1].location.file).toBeDefined();
           expect(messages[1].location.file).toMatch(/.+error_line_col\.yml$/);
           expect(messages[1].location.position).toBeDefined();
@@ -104,10 +104,10 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       );
     });
 
-    it('finds one message', () => {
+    it('finds two messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(1);
+          expect(messages.length).toEqual(2);
         })
       );
     });
@@ -139,10 +139,10 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       );
     });
 
-    it('finds one message', () => {
+    it('finds two messages', () => {
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages.length).toEqual(1);
+          expect(messages.length).toEqual(2);
         })
       );
     });
@@ -151,13 +151,21 @@ describe('The Ansible Syntax Check provider for Linter', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
           expect(messages[0].severity).toBeDefined();
-          expect(messages[0].severity).toEqual('warning');
+          expect(messages[0].severity).toEqual('error');
           expect(messages[0].excerpt).toBeDefined();
-          expect(messages[0].excerpt).toMatch(/Included file/);
+          expect(messages[0].excerpt).toEqual('Unable to retrieve file contents');
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+missing_include\.yml$/);
           expect(messages[0].location.position).toBeDefined();
           expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
+          expect(messages[1].severity).toBeDefined();
+          expect(messages[1].severity).toEqual('warning');
+          expect(messages[1].excerpt).toBeDefined();
+          expect(messages[1].excerpt).toEqual('"include" is deprecated, use include_tasks/import_tasks .');
+          expect(messages[1].location.file).toBeDefined();
+          expect(messages[1].location.file).toMatch(/.+missing_include\.yml$/);
+          expect(messages[1].location.position).toBeDefined();
+          expect(messages[1].location.position).toEqual([[0, 0], [0, 1]]);
         });
       });
     });
@@ -175,7 +183,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
   it('ignores an included file', (done) => {
     const goodFile = path.join(__dirname, 'fixtures', 'included_clean.yml');
     return atom.workspace.open(goodFile).then(editor =>
-      lint(editor).then(=> {
+      lint(editor).then(messages => {
       }, () => {
         done();
       })
