@@ -1,9 +1,14 @@
+
+### Linter Ansible Syntax   [![Badge Status]][Travis]
+
+*A package that aims to provide robust **Ansible** <br>
+syntax checking / linting functionality for **Atom**.*
+
+<br>
+
 ![Preview]
 
-### Linter-Ansible-Syntax
-[![Badge Status]][Travis]
-
-`Linter-Ansible-Syntax` aims to provide functional and robust Ansible syntax check linting functionality within Atom.
+<br>
 
 ### Atom Editor Sunset Updates
 
