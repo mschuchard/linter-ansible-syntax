@@ -10,16 +10,46 @@ syntax checking / linting functionality for **Atom**.*
 
 <br>
 
-### Atom Editor Sunset Updates
+## Sunset Updates
 
-`apm` was discontinued prior to the sunset by the Atom Editor team. Therefore, the installation instructions are now as follows:
+As the **APM** has been discontinued by the **Atom Team**, <br>
+the following installation instructions are now necessary.
 
-- Locate the Atom packages directory on your filesystem (normally at `<home>/.atom/packages`)
-- Retrieve the code from this repository either via `git` or the Code-->Download ZIP option in Github.
-- Place the directory containing the repository's code in the Atom packages directory.
-- Execute `npm install` in the package directory.
+1.  Navigate to your **Atom** package directory.
 
-Additionally, this package is now in maintenance mode. All feature requests and bug reports in the Github repository issue tracker will receive a response, and possibly also be implemented. However, active development on this package has ceased.
+    ⤷ `<home>/.atom/packages`
+    
+2.  Clone or **[Download]** this repository.
+
+    #### Clone
+    
+    ```shell
+    git clone https://github.com/kdeldycke/meta-package-manager
+    ```
+    
+3.  Place the retrieved code folder in the `packages` folder.
+
+4.  Execute the following in the folder:
+
+    ```shell
+    npm install
+    ```
+
+<br>
+<br>
+
+## Project Status
+
+This package is now in **Maintenance Mode**.
+
+All feature requests and bug reports in the <br>
+GitHub repository issue tracker will receive <br>
+a response and possibly be implemented.
+
+***Active development however, has ceased.***
+
+<br>
+<br>
 
 ### Installation
 Ansible version >= 2.0 is required to be installed before using this. The Linter and Language-Ansible Atom packages are also required.
@@ -32,6 +62,7 @@ Ansible version >= 2.0 is required to be installed before using this. The Linter
 
 <!----------------------------------------------------------------------------->
 
+[Download]: https://github.com/kdeldycke/meta-package-manager/archive/refs/heads/main.zip
 [Travis]: https://travis-ci.com/mschuchard/linter-ansible-syntax
 
 [Preview]: resources/Preview.png
