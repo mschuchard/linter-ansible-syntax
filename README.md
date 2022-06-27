@@ -1,5 +1,5 @@
 
-### Linter Ansible Syntax   [![Badge Status]][Travis]
+### Linter Ansible Syntax    [![Badge Status]][Travis]
 
 *A package that aims to provide robust **Ansible** <br>
 syntax checking / linting functionality for **Atom**.*
@@ -25,7 +25,7 @@ the following installation instructions are now necessary.
     git clone https://github.com/kdeldycke/meta-package-manager
     ```
     
-3.  Place the retrieved code folder in the `packages` folder.
+3.  Place the retrieved code folder in the `/packages/` folder.
 
 4.  Execute the following in the folder:
 
@@ -51,7 +51,7 @@ a response and possibly be implemented.
 
 ## Requirements
 
-- Ansible `2.0+`
+- Ansible `2.0+`
 
 - Atom Language-Ansible Package
 
