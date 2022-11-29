@@ -8,7 +8,7 @@ jobs:
       APM_TEST_PACKAGES: 'language-ansible'
     working_directory: /tmp/project
     machine:
-      image: ubuntu-2004:current
+      image: ubuntu-2204:current
     steps:
     - checkout
     - restore_cache:
