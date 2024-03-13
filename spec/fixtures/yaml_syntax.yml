@@ -1,10 +1,9 @@
 # YAML syntax error for error handling
 ---
 - hosts: whatever
-
   tasks:
-  - name: this task is fine
-    debug:
+  - name: This task is fine
+    ansible.builtin.debug:
       msg: 'hello world'
 
 name: this task is not

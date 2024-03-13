@@ -1,7 +1,7 @@
 # No errors from syntax check.
 ---
 - hosts: whatever
-
   tasks:
-    - name: hello world
-      action: debug msg="Hello!"
+    - name: Hello World
+      ansible.builtin.debug:
+        msg: "Hello!"

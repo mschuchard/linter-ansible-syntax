@@ -1,6 +1,6 @@
 # Playbook that includes a file with an error.
 ---
 - hosts: whatever
-
   tasks:
-    - include: error_included.yml
+  - name: Bad include
+    ansible.builtin.include_tasks: error_included.yml
