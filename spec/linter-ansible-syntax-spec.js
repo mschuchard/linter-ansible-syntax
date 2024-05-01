@@ -87,7 +87,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[0].location.file).toBeDefined();
           expect(messages[0].location.file).toMatch(/.+yaml_syntax\.yml$/);
           expect(messages[0].location.position).toBeDefined();
-          expect(messages[0].location.position).toEqual([[9, 0], [9, 1]]);
+          expect(messages[0].location.position).toEqual([[8, 0], [8, 1]]);
         });
       });
     });
