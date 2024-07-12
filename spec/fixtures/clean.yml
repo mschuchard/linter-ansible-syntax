@@ -1,6 +1,7 @@
 # No errors from syntax check.
 ---
-- hosts: whatever
+- name: Clean fixture
+  hosts: whatever
   tasks:
     - name: Hello World
       ansible.builtin.debug:
