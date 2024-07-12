@@ -1,12 +1,12 @@
 ### 1.3.2 (Next)
 - Improve YAML syntax error message parsing.
 - Ignore irrelevant inventory and hosts warnings.
+- Workaround JS bug returning incorrect conditional on YAML error.
 
 bug in pulsar/ide-ui causing issues displaying yaml syntax message
 warnings no longer captured randomly
 update error-line-col, bad_include, missing_include because syntax-check no longer finding errors in general
-diagnostic missing message for temp fixture copied here
-task with only name emits uncaptured message
+js bug causes matchesYAMLError[1] message to not be captured (yaml_syntax fixture)
 
 ### 1.3.1
 - Updates to Linter API usage.
