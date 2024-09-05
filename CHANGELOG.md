@@ -1,3 +1,7 @@
+bug in pulsar/ide-ui causing issues displaying yaml syntax message
+update error-line-col, bad_include, missing_include because syntax-check no longer finding errors in general
+js bug causes matchesYAMLError[1] message to not be captured (yaml_syntax fixture)
+
 ### 1.3.2
 - Improve YAML syntax error message parsing.
 - Ignore irrelevant inventory and hosts warnings.

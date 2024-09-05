@@ -12,5 +12,6 @@ All testing is performed with the latest stable version of Pulsar. Any version o
 
 ### Usage
 - The Ansible syntax check only outputs the first error it encounters, and therefore only the first error in a playbook will be displayed.
+- Pulsar uses a legacy version of Node, and a bug within that version no longer permits this linter to capture Ansible warnings.
 - The Ansible syntax check functionality is only operable on a playbook. If your playbook contains roles and/or includes anywhere in the playbook, then these will be checked as well.
 - To quickly and easily access issues in other files, you will need to change the settings inside Linter-UI-Default. For `Panel Represents` and/or `Statusbar Represents`, you will need to change their options to `Entire Project`. This will allow you to use either display to quickly access issues in other files by clicking on the displayed information.
