@@ -128,7 +128,7 @@ describe('The Ansible Syntax Check provider for Linter', () => {
     });
   });
 
-  describe('checks a file with an issue and', () => {
+  describe('checks a file with a missing include and', () => {
     let editor = null;
     const badFile = path.join(__dirname, 'fixtures', 'missing_include.yml');
     beforeEach(() => {
@@ -166,6 +166,41 @@ describe('The Ansible Syntax Check provider for Linter', () => {
           expect(messages[1].location.file).toMatch(/.+missing_include\.yml$/);
           expect(messages[1].location.position).toBeDefined();
           expect(messages[1].location.position).toEqual([[0, 0], [0, 1]]);
+        });
+      });
+    });
+  });
+
+  describe('checks a file with an ansible usage issue and', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures', 'name_only.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds one message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(1);
+        })
+      );
+    });
+
+    it('verifies the message', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].severity).toBeDefined();
+          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].excerpt).toBeDefined();
+          expect(messages[0].excerpt).toEqual('no module/action detected in task.');
+          expect(messages[0].location.file).toBeDefined();
+          expect(messages[0].location.file).toMatch(/.+name_only\.yml$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[4, 6], [4, 7]]);
         });
       });
     });

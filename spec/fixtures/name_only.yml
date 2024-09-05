@@ -1,0 +1,5 @@
+---
+- name: Clean fixture
+  hosts: whatever
+  tasks:
+    - name: Hello World
