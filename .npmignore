@@ -3,6 +3,5 @@ node_modules
 spec
 linter_ansible_syntax.png
 .git
-.travis.yml
 .circleci
 .github
