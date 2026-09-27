@@ -5,6 +5,7 @@ warnings capturing does work, but just not in spec/fixtures for some bizarre rea
 
 ### 1.3.3 (Next)
 - Improve package activation.
+- Improve stdin lint detection.
 
 ### 1.3.2
 - Improve YAML syntax error message parsing.
