@@ -1,7 +1,4 @@
-update error-line-col, bad_include, missing_include because syntax-check no longer finding errors in general
-warnings capturing does work, but just not in spec/fixtures for some bizarre reason (can easily verify with independent playbook) as output and line is empty for some reason
-
-### 1.3.3 (Next)
+### 1.3.3
 - Improve package activation.
 - Improve stdin lint detection.
 - Fix YAML syntax error capture.
